@@ -1,28 +1,58 @@
 {
-  "name": "sufee-admin-dashboard",
-  "version": "1.0.0",
-  "description": "Sufee Admin Dashboard",
-  "main": "assets/js/main.js",
-  "scripts": {
-    "test": "test"
-  },
+  "name": "animate.css",
+  "version": "3.7.0",
+  "main": "animate.css",
   "repository": {
     "type": "git",
-    "url": "git+git@github.com:sarangaem/sufee-admin-dashboard.git"
+    "url": "https://github.com/daneden/animate.css.git"
   },
-  "keywords": [
-    "html",
-    "js",
-    "css"
-  ],
-  "author": "Aigars Silkalns",
+  "author": {
+    "name": "Daniel Eden"
+  },
+  "homepage": "http://daneden.me/animate",
   "license": "MIT",
-  "homepage": "https://colorlib.com/polygon/sufee/index.html",
+  "style": "./animate.css",
+  "jspm": {
+    "main": "animate.css!",
+    "format": "global",
+    "directories": {
+      "lib": "./"
+    }
+  },
   "devDependencies": {
-    "grunt": "^1.0.3",
-    "grunt-lintspaces": "^0.8.3",
-    "grunt-pleeease": "^1.4.0",
-    "grunt-sass": "^3.0.1",
-    "node-sass": "^4.9.3"
+    "autoprefixer": "^9.0.1",
+    "cssnano": "^4.0.3",
+    "eslint": "^5.2.0",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-header": "^2.0.1",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-util": "^3.0.8",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.10.2",
+    "run-sequence": "^2.2.1"
+  },
+  "lint-staged": {
+    "*.{js,json,md,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "proseWrap": "never",
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "scripts": {
+    "gulp": "./node_modules/gulp/bin/gulp.js",
+    "start": "gulp",
+    "prettier": "prettier --write \"**/*.{js,json,md,css}\"",
+    "precommit": "lint-staged"
+  },
+  "spm": {
+    "main": "./animate.css"
   }
 }
